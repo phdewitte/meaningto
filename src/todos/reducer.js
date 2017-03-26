@@ -6,14 +6,14 @@ import { combineReducers } from 'redux';
 //     todos: [],
 // };
 
-// Add ID, price, date
 const todo = (state = {}, action) => {
     switch (action.type) {
         case actionTypes.ADD_TODO:
             return {
                 id: uuid.v4(),
                 text: action.text,
-                completed: action.completed,
+                price: action.price,
+                completed: false,
             };
 
         case actionTypes.TOGGLE_TODO:

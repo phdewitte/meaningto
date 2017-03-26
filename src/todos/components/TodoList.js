@@ -5,7 +5,7 @@ const TodoList = ({ todos, onTodoClick }) => (
     <ul>
         {todos.map(todo =>
             <Todo
-                key={todo.id}
+                key={`td-${todo.id}`}
                 {...todo}
                 onClick={() => onTodoClick(todo.id)}
             />
@@ -15,7 +15,7 @@ const TodoList = ({ todos, onTodoClick }) => (
 
 TodoList.propTypes = {
     todos: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        id: PropTypes.string.isRequired,
         completed: PropTypes.bool.isRequired,
         text: PropTypes.string.isRequired,
     }).isRequired).isRequired,
