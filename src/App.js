@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import AddTodo from './todos/AddTodo';
+import TodoForm from './todos/TodoForm';
 import FilterSet from './todos/components/FilterSet';
 import VisibleTodoList from './todos/VisibleTodoList';
 
-export default class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>Meaning to...</h1>
+import styles from './app.css';
 
-                <AddTodo />
-                <VisibleTodoList />
-                <FilterSet />
-            </div>
-        );
-    }
+const App = () => {
+    return (
+        <div>
+            <h1>Meaning to...</h1>
+
+            <TodoForm />
+            <VisibleTodoList />
+            <FilterSet />
+        </div>
+    );
 };
+
+export default App;
