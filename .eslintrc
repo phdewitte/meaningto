@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "globals": {
+    "describe": true,
+    "it": true,
+    "xit": true,
+    "beforeEach": true,
+    "afterEach": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "space-before-function-paren": ["error", "never"]
+  }
+}

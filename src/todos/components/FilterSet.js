@@ -1,22 +1,27 @@
 import React from 'react';
 import FilterLink from '../FilterLink';
 
-const FilterSet = () => (
-    <p>
-        Show:
-        {' '}
-        <FilterLink filter='SHOW_ALL'>
-            All
+const FilterSet = ({ type, displayMsg, filterItems }) => {
+  const filters = [];
+
+  for (let i = 0; i < filterItems.length; i++) {
+    filters.push(
+      <div key={`${type}-${i}`}>
+        <FilterLink
+          filter={`SHOW_${filterItems[i].toUpperCase()}`}>
+          {filterItems[i]}
         </FilterLink>
-        {', '}
-        <FilterLink filter='SHOW_ACTIVE'>
-            Active
-        </FilterLink>
-        {', '}
-        <FilterLink filter='SHOW_COMPLETED'>
-            Completed
-        </FilterLink>
-    </p>
-);
+        {i === filterItems.length - 1 ? ' ' : ', '}
+      </div>
+    )
+  };
+  
+  return (
+    <div>
+      {displayMsg}:
+      {filters}
+    </div>
+  )
+};
 
 export default FilterSet;
