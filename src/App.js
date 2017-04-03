@@ -6,15 +6,24 @@ import VisibleTodoList from './todos/VisibleTodoList';
 import styles from './app.css';
 
 const App = () => {
-    return (
-        <div>
-            <h1>Meaning to...</h1>
+  return (
+    <div>
+      <h1>Meaning to...</h1>
 
-            <TodoForm />
-            <VisibleTodoList />
-            <FilterSet />
-        </div>
-    );
+      <TodoForm />
+      <VisibleTodoList />
+      <FilterSet
+        type="activeState"
+        displayMsg="Completed State"
+        filterItems={['All', 'Active', 'Completed']}
+      />
+      <FilterSet
+        type="categories"
+        displayMsg="Categories"
+        filterItems={['Restaurants', 'Concerts', 'Theatre', 'Parks']}
+      />
+    </div>
+  );
 };
 
 export default App;

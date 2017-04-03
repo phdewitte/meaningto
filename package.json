@@ -1,7 +1,7 @@
 {
   "name": "meaningto",
   "version": "1.0.0",
-  "description": "An app for the things you have been meaning to do. (A todo app.)",
+  "description": "An app for the things you have been meaning to do.",
   "main": "webpack.config.js",
   "scripts": {
     "start": "node webpack/webpack-dev-server",
