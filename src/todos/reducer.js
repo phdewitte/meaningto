@@ -2,10 +2,6 @@ import * as actionTypes from './actionTypes';
 import uuid from 'uuid';
 import { combineReducers } from 'redux';
 
-// const initialState = {
-//     todos: [],
-// };
-
 const todo = (state = {}, action) => {
   switch (action.type) {
     case actionTypes.ADD_TODO:
@@ -53,6 +49,8 @@ const visibilityFilter = (state = 'SHOW_ALL', action) => {
   switch (action.type) {
     case actionTypes.SET_VISIBILITY_FILTER:
       return action.filter;
+    case actionTypes.SHOW_CATEGORY:
+      return action.category
 
     default:
       return state;

@@ -11,10 +11,11 @@ export const addTodo = (text, category, price) => {
   };
 };
 
-export const setVisibilityFilter = filter => {
+export const setVisibilityFilter = (filterComponents) => {
   return {
     type: actionTypes.SET_VISIBILITY_FILTER,
-    filter,
+    filter: filterComponents.filter,
+    category: filterComponents.children,
   };
 };
 

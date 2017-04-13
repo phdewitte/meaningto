@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TodoForm from './todos/TodoForm';
 import FilterSet from './todos/components/FilterSet';
-import VisibleTodoList from './todos/VisibleTodoList';
+import TodoList from './todos/components/TodoList';
 
 import styles from './app.css';
 
@@ -11,7 +11,7 @@ const App = () => {
       <h1>Meaning to...</h1>
 
       <TodoForm />
-      <VisibleTodoList />
+      <TodoList />
       <FilterSet
         type="activeState"
         displayMsg="Completed State"
