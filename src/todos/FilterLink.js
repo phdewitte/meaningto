@@ -5,11 +5,11 @@ import { setVisibilityFilter } from './actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     active: ownProps.filter === state.visiblityFilter,
-    category: ownProps.category === state.category,
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  console.log('ownProps', ownProps);
   return {
     onClick: () => {
       dispatch(setVisibilityFilter(ownProps));

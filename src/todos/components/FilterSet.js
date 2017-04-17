@@ -2,29 +2,29 @@ import React from 'react';
 import FilterLink from '../FilterLink';
 
 const FilterSet = ({ type, displayMsg, filterItems }) => {
-  const filters = [];
+  var filters = [];
 
   for (let i = 0; i < filterItems.length; i++) {
-    let showFilter = `SHOW_${filterItems[i].toUpperCase()}`;
+    let whatToShow = `SHOW_${filterItems[i].toUpperCase()}`;
 
     if (filterItems[i] !== 'All'
       || filterItems[i] !== 'Active'
       || filterItems[i] !== 'Completed'
     ) {
-      showFilter = 'SHOW_CATEGORY';
+      whatToShow = 'SHOW_CATEGORY';
     }
 
-    const separator = i === filterItems.length - 1 
+    const listSeparator = i === filterItems.length - 1 
       ? ' '
       : ', ';
 
     filters.push(
       <div key={`${type}-${i}`}>
         <FilterLink
-          filter={showFilter}>
+          filter={whatToShow}>
           {filterItems[i]}
         </FilterLink>
-        {separator}
+        {listSeparator}
       </div>
     )
   };

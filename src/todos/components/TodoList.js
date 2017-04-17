@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 const TodoList = ({ todos, onTodoClick }) => (
-  <ul>
+  <ul >
     {todos.map(todo =>
       <Todo
         key={`td-${todo.id}`}

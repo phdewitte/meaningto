@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TodoForm from './todos/TodoForm';
 import FilterSet from './todos/components/FilterSet';
+import CategorySet from './todos/components/CategorySet';
 import TodoList from './todos/components/TodoList';
 
 import styles from './app.css';
@@ -17,7 +18,7 @@ const App = () => {
         displayMsg="Completed State"
         filterItems={['All', 'Active', 'Completed']}
       />
-      <FilterSet
+      <CategorySet
         type="categories"
         displayMsg="Categories"
         filterItems={['Restaurants', 'Concerts', 'Theatre', 'Parks']}

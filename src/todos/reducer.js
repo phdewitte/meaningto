@@ -51,7 +51,6 @@ const visibilityFilter = (state = 'SHOW_ALL', action) => {
       return action.filter;
     case actionTypes.SHOW_CATEGORY:
       return action.category
-
     default:
       return state;
   }
