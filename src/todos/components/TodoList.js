@@ -4,15 +4,20 @@ import { connect } from 'react-redux';
 import { toggleTodo } from '../actions';
 
 const getVisibleTodos = (todos, filter, category) => {
+  let filteredTodos = todos;
+
+  if (category !== 'Any') {
+    filteredTodos = todos.filter(todo => 
+      todo.category === category)
+  }
+
   switch (filter) {
     case 'SHOW_ALL':
-      return todos;
+      return filteredTodos;
     case 'SHOW_COMPLETED':
-      return todos.filter(todo => todo.completed);
+      return filteredTodos.filter(todo => todo.completed);
     case 'SHOW_ACTIVE':
-      return todos.filter(todo => !todo.completed);
-    case 'SHOW_CATEGORY':
-      return todos.filter(todo => todo.category === category);
+      return filteredTodos.filter(todo => !todo.completed);
   }
 };
 

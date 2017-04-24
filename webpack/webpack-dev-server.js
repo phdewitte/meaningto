@@ -8,6 +8,7 @@ const env = { dev: process.env.NODE_ENV };
 const devServerConfig = {
     contentBase: path.join(__dirname, '../../src/'),
     historyApiFallback: { disableDotRule: true },
+    stats: { colors: true },
 };
 
 const server = new WebpackDevServer(webpack(webpackpackConfig(env)), devServerConfig);

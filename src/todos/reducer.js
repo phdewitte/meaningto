@@ -47,10 +47,17 @@ const todos = (state = [], action) => {
 
 const visibilityFilter = (state = 'SHOW_ALL', action) => {
   switch (action.type) {
-    case actionTypes.SET_VISIBILITY_FILTER:
-      return action.filter;
+    case actionTypes.SET_ACTIVE_STATE:
+      return action.payload.filter;
+    default:
+      return state;
+  }
+};
+
+const category = (state = 'Any', action) => {
+  switch(action.type) {
     case actionTypes.SHOW_CATEGORY:
-      return action.category
+      return action.payload.category;
     default:
       return state;
   }
@@ -59,6 +66,7 @@ const visibilityFilter = (state = 'SHOW_ALL', action) => {
 const rootReducer = combineReducers({
   todos,
   visibilityFilter,
+  category,
 });
 
 export default rootReducer;
