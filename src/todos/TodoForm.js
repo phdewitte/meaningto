@@ -19,15 +19,18 @@ let TodoForm = ({ dispatch }) => {
         category.value = '';
         price.value = '';
       }}>
-        <input ref={node => {
-          text = node;
-        }} />
-        <input ref={node => {
-          category = node;
-        }} />
-        <input ref={node => {
-          price = node;
-        }} />
+        <input ref={node => { text = node; }} />
+        <input ref={node => { price = node; }} />
+        <select
+          name="category"
+          ref={node => { category = node; }}
+        >
+          <option defaultValue value="None">None</option> 
+          <option value="Restaurants">Restaurants</option>
+          <option value="Concerts">Concerts</option>
+          <option value="Theatre">Theatre</option>
+          <option value="Parks">Parks</option>
+        </select>
         <button type="submit">
           Add Todo
         </button>
