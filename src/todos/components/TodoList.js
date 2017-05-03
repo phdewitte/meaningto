@@ -35,6 +35,8 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+// Change from a UL to an evenly distributed grid of categories
+// Expand category on focus
 const TodoList = ({ todos, onTodoClick }) => (
   <ul >
     {todos.map(todo =>
