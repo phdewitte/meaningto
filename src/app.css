@@ -1,13 +1,13 @@
 @import 'assets/styles/_colors.css';
 @import url('https://fonts.googleapis.com/css?family=Questrial');
 
-body {
-    display: grid;
-    grid-template-columns: 1;
+.container {
+  display: grid;
+  grid-template-columns: 1;
 
-    font-family: 'Questrial', sans-serif;
-    text-align: center;
-    
-    background-color: var(--color-white);
-    color: var(--color-black);
+  font-family: 'Questrial', sans-serif;
+  text-align: center;
+  
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
