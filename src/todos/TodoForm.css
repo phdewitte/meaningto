@@ -1,0 +1,8 @@
+.todoForm {
+  display: grid;
+}
+
+.inputRow {
+  border: 2px solid red;
+  grid-auto-rows: 85%;
+}
