@@ -1,0 +1,12 @@
+To Implement:
+
+- Preact
+- Code splitting
+  -Bundle analyzer
+- CSS grid
+- Node server (Hapi?) / MongoDB 
+- Jest
+- PureComponent
+- PWA
+
+- Connecting at lower levels???

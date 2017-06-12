@@ -24,6 +24,7 @@ Todo.defaultProps = {
   completed: false,
   text: '',
   category: null,
+  price: '',
 };
 
 export default Todo;
