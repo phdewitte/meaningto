@@ -1,10 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { addTodo } from './actions';
 
 import styles from './TodoForm.css';
 
-let TodoForm = ({ dispatch }) => {
+const TodoForm = (props) => {
   let text;
   let category;
   let price;
@@ -12,50 +10,57 @@ let TodoForm = ({ dispatch }) => {
   const submitTodo = (e) => {
     e.preventDefault();
 
+    const { addTodo } = props;
+
     if (!text.value.trim()) {
-        return;
+      return;
     }
 
-    dispatch(addTodo(text.value, category.value, price.value));
+    if (typeof addTodo === 'function') {
+      addTodo(text.value, category.value, price.value);
+    }
 
     text.value = '';
     category.value = '';
     price.value = '';
-  }
+  };
 
+  // TODO: Convert from refs to controlled component structure
   return (
     <div>
-      <form 
+      <form
         onSubmit={submitTodo}
         className={styles.todoForm}
       >
         <input
-          ref={node => { text = node; }}
+          ref={(node) => { text = node; }}
           className={styles.inputRow}
         />
         <input
-          ref={node => { price = node; }}
+          ref={(node) => { price = node; }}
           className={styles.inputRow}
         />
         <select
           name="category"
-          ref={node => { category = node; }}
+          ref={(node) => { category = node; }}
+          className={styles.dropdown}
         >
-          <option defaultValue value="None">None</option> 
+          <option defaultValue value="None">None</option>
           <option value="Restaurants">Restaurants</option>
           <option value="Concerts">Concerts</option>
           <option value="Theatre">Theatre</option>
           <option value="Parks">Parks</option>
         </select>
 
-        <button type="submit">
+        <button
+          type="submit"
+          className={styles.submitButton}
+        >
           Add Todo
         </button>
       </form>
     </div>
   );
 };
-
-TodoForm = connect()(TodoForm);
 
 export default TodoForm;

@@ -1,0 +1,20 @@
+@import '../../assets/styles/_colors.css';
+
+.todoForm {
+  display: grid;
+}
+
+.inputRow {
+  border: 1px solid var(--color-gray);
+  grid-auto-rows: 85%;
+}
+
+.dropdown {
+  border: 1px solid var(--color-gray);
+}
+
+.submitButton {
+ border: 1px solid var(--color-gray);
+ background-color: var(--color-gray);
+ color: white;
+}
