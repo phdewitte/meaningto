@@ -30,20 +30,26 @@ const TodoForm = (props) => {
     <div>
       <form
         onSubmit={submitTodo}
-        className={styles.todoForm}
+        className="todo-form"
       >
         <input
           ref={(node) => { text = node; }}
-          className={styles.inputRow}
+          className="todo-form__input-row"
+          label="description"
+          name="Description"
         />
         <input
           ref={(node) => { price = node; }}
-          className={styles.inputRow}
+          type="number"
+          placeholder="$"
+          className="todo-form__input-row"
+          label="price"
+          name="Price"
         />
         <select
           name="category"
           ref={(node) => { category = node; }}
-          className={styles.dropdown}
+          className="todo-form__input-dropdown"
         >
           <option defaultValue value="None">None</option>
           <option value="Restaurants">Restaurants</option>
@@ -54,7 +60,7 @@ const TodoForm = (props) => {
 
         <button
           type="submit"
-          className={styles.submitButton}
+          className="todo-form__submit-button"
         >
           Add Todo
         </button>

@@ -1,13 +1,35 @@
 @import 'assets/styles/_colors.css';
 @import url('https://fonts.googleapis.com/css?family=Questrial');
 
-.container {
-  display: grid;
-  grid-template-columns: 1;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
 
   font-family: 'Questrial', sans-serif;
   text-align: center;
+  font-size: 18px;
   
   background-color: var(--color-white);
   color: var(--color-black);
+
+  padding: 0 20px;
+}
+
+.filter-set {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: .5em 0;
+  }
+
+  &__link {
+    margin: .5em;
+    font-size: 1em;
+  }
 }
