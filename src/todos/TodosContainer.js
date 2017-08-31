@@ -5,9 +5,6 @@ import { TodoForm, TodoList, FilterSet } from './components';
 import * as todoActions from './actions';
 import { todoSelectors } from './selectors';
 
-const mapDispatch = dispatch => ({
-  todoActions: bindActionCreators(todoActions, dispatch),
-});
 
 const TodosContainer = props => (
   <div>
@@ -30,6 +27,10 @@ const TodosContainer = props => (
     />
   </div>
 );
+
+const mapDispatch = dispatch => ({
+  todoActions: bindActionCreators(todoActions, dispatch),
+});
 
 TodosContainer.propTypes = {
   todoActions: PropTypes.shape({

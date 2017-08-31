@@ -5,13 +5,13 @@ const FilterSet = ({ type, displayMsg, filterOptions }) => {
   const filters = [];
 
   for (let i = 0; i < filterOptions.length; i += 1) {
-    let whatToShow = `SHOW_${filterOptions[i].toUpperCase()}`;
+    let filterType = `SHOW_${filterOptions[i].toUpperCase()}`;
 
     if (filterOptions[i] !== 'All'
       && filterOptions[i] !== 'Active'
       && filterOptions[i] !== 'Completed'
     ) {
-      whatToShow = 'SET_CATEGORY';
+      filterType = 'SET_CATEGORY';
     }
 
     const listSeparator = i === filterOptions.length - 1
@@ -21,7 +21,7 @@ const FilterSet = ({ type, displayMsg, filterOptions }) => {
     filters.push(
       <div key={`${type}-${i}`}>
         <FilterLink
-          filter={whatToShow}
+          filter={filterType}
         >
           {filterOptions[i]}
         </FilterLink>

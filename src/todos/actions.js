@@ -27,11 +27,11 @@ export const setCategory = filterComponents => ({
 
 export const setVisibilityFilter = filterComponents => (
   (dispatch) => {
-    const isActiveState = filterComponents.children === 'All'
+    const isActiveStateUpdate = filterComponents.children === 'All'
       || filterComponents.children === 'Active'
       || filterComponents.children === 'Completed';
 
-    return isActiveState
+    return isActiveStateUpdate
       ? dispatch(setActiveState(filterComponents))
       : dispatch(setCategory(filterComponents));
   });

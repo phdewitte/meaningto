@@ -30,16 +30,9 @@ const todo = (state = {}, action) => {
 const todos = (state = [], action) => {
   switch (action.type) {
     case actionTypes.ADD_TODO:
-      return [
-        ...state,
-        todo(undefined, action),
-      ];
-
+      return [...state, todo({}, action)];
     case actionTypes.TOGGLE_TODO:
-      return state.map(item =>
-        todo(item, action),
-      );
-
+      return state.map(item => todo(item, action));
     default:
       return state;
   }
