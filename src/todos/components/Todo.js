@@ -7,7 +7,7 @@ const Todo = ({ onClick, completed, text, category, price }) => (
       textDecoration: completed ? 'line-through' : 'none',
     }}
   >
-    {`Description: ${text} Price: ${price} Category: ${category}`}
+    {`${text} - ${price} - ${category}`}
   </li>
 );
 

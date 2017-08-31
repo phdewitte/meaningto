@@ -18,7 +18,9 @@ const FilterLink = ({ active, children, onClick }) => {
   }
 
   return (
-    <a href='#'
+    <a
+      href="#"
+      className="filter-set__link"
       onClick={(e) => {
         e.preventDefault();
         onClick();

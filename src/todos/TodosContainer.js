@@ -11,19 +11,16 @@ const TodosContainer = props => (
     <TodoForm
       addTodo={props.todoActions.addTodo}
     />
-
     <TodoList />
-
-    <FilterSet
-      type="activeState"
-      displayMsg="Completed State"
-      filterOptions={['All', 'Active', 'Completed']}
-    />
-
     <FilterSet
       type="categories"
       displayMsg="Categories"
       filterOptions={['Restaurants', 'Concerts', 'Theatre', 'Parks']}
+    />
+    <FilterSet
+      type="activeState"
+      displayMsg="Completed State"
+      filterOptions={['All', 'Active', 'Completed']}
     />
   </div>
 );

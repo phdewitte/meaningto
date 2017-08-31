@@ -14,10 +14,6 @@ const FilterSet = ({ type, displayMsg, filterOptions }) => {
       filterType = 'SET_CATEGORY';
     }
 
-    const listSeparator = i === filterOptions.length - 1
-      ? ' '
-      : ', ';
-
     filters.push(
       <div key={`${type}-${i}`}>
         <FilterLink
@@ -25,15 +21,18 @@ const FilterSet = ({ type, displayMsg, filterOptions }) => {
         >
           {filterOptions[i]}
         </FilterLink>
-        {listSeparator}
       </div>,
     );
   }
 
   return (
-    <div>
-      {displayMsg}:
-      {filters}
+    <div className="filter-set">
+      <div className="filter-set__title">
+        {displayMsg}:
+      </div>
+      <div className="filter-set__list">
+        {filters}
+      </div>
     </div>
   );
 };
